@@ -23,8 +23,6 @@ public class FileReaderUtil {
 		return jsonObj;	
 	}
 	
-	public void readFromExcel(String excelFilePath) throws IOException, FileNotFoundException, ParseException{
-		
-		FileReader reader = new FileReader(excelFilePath);
-	}
+	//TODO: read from excel
+	//TODO: read from ymal file
 }
