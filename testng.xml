@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="API Test Suite" parallel="false" allow-return-values="false" >
+
+	<parameter name="propertiesPath" value="src/test/resources/config/config.properteis" />
+	<parameter name="baseURL" value="http://localhost:8080/app" />
+
+	<listeners>
+		<listener class-name="listener.TestLogListener" />
+		<listener class-name = "listener.FailedRetryRunner" />
+	</listeners>
+	 
+	<test name="emulatorTest">
+	    <classes>
+	      <class name="testcases.LoginPageTest"/>
+	    </classes>
+	   <methods>
+	   		<include name = "testLogin" />
+	   </methods>
+	  </test> <!-- Test -->
+	 
+</suite> <!-- Suite -->

@@ -1,0 +1,13 @@
+{
+  "name":"clover",
+  "location":"Hamilton",
+  "languages":[
+ 	 "Mandarin",
+ 	 "English"
+ 	 ],
+  "hobbies":{
+ 	 "Swimming":"sometimes",
+ 	 "Lego":"often",
+ 	 "Reading":"sometimes"
+  }
+}
