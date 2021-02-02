@@ -9,7 +9,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class TestGetVideoGame extends BaseTest {
 
 	
-	@Test(description = "get a list of all Video Games", priority = 1)
+	@Test(description = "API: get a list of all Video Games", priority = 1)
 	public void testGetAllVideoGames() {
 		
 		RestAssured.basePath = BaseTest.getAllVideoGames();	
@@ -24,7 +24,7 @@ public class TestGetVideoGame extends BaseTest {
 	}
 		
 	
-	@Test(description = "get one Video Game by id", priority = 2)
+	@Test(description = "API: get one Video Game by id", priority = 2)
 	public void testSearchByID(){
 		
 		RestAssured.basePath = BaseTest.getVideoGameByID(2);

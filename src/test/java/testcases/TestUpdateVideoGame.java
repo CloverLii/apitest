@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import io.restassured.RestAssured;
-import util.DataBuilder;
 import util.FormatConverterUtil;
 import util.VideoGame;
 
@@ -18,19 +17,11 @@ public class TestUpdateVideoGame extends BaseTest {
 	@BeforeTest(alwaysRun= true, description = " generate random video game info for adding")
 	public void prepareDate() {
 		
-		String name = DataBuilder.getName();
-		String releaseDate = DataBuilder.getReleaseDate();
-		String category = DataBuilder.getCategoryName();
-		String rate = DataBuilder.getRating();
-		Integer reviewScore = DataBuilder.getReviewScore();
-		Integer id = DataBuilder.getId(14);
-		
-		System.out.println("...new video game obj: " + id + ", " + name + ", "  + releaseDate + ", "  + reviewScore + ", "  + category + ", "  + rate);
-		
-		videoGame = new VideoGame(id, name, releaseDate, reviewScore, category, rate);
+		videoGame = BaseTest.newVideoGame();
+		BaseTest.printVGInfo(videoGame);
 	}
-
-	@Test(description = "add a new video game", priority = 3)	
+		
+	@Test(description = "API: add a new video game", priority = 3)	
 	public void testAddVideoGames() throws JsonProcessingException {
 		
 		RestAssured.basePath = BaseTest.addNewVideoGame();		
@@ -47,10 +38,10 @@ public class TestUpdateVideoGame extends BaseTest {
 			.log().all();
 	}
 	
-	@Test (description = "delete a video game by id")
+	@Test (description = "API: delete a video game by id")
 	public void testDeleteVideoGame() {
-		
-		RestAssured.basePath = BaseTest.deleteVideoGameByID(15);
+			
+		RestAssured.basePath = BaseTest.deleteVideoGameByID(videoGame.getId());
 		
 		given()	
 			.contentType("application/json")
