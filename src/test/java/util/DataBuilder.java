@@ -2,7 +2,6 @@ package util;
 
 import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
-import java.util.Date;
 import java.util.Random;
 
 public class DataBuilder {

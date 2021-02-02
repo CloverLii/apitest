@@ -45,4 +45,29 @@ public class VideoGame {
 	public String getRate() {
 		return rate;
 	}
+	
+	public void setID(Integer id) {
+		this.id = id;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
+	
+	public void setReviewScore(Integer score) {
+		this.reviewScore = score;
+	}
+	
+	public void setCategory(String category) {
+		this.category = category;
+	}
+	
+	public void setRate(String rate) {
+		this.rate = rate;
+	}
+	
 }
