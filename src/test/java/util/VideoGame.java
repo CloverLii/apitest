@@ -7,11 +7,9 @@ public class VideoGame {
 	private String releaseDate; // format: 2005-10-01T00:00:00+12:00
 	private Integer reviewScore;
 	private String category;
-	private String rate;
+	private String rating;
 	
-	public VideoGame() {
-		
-	}
+	public VideoGame(){}
 	
 	public VideoGame(Integer id, String name, String releaseDate, Integer reviewScore, String category, String rate) {
 		this.id = id;
@@ -19,7 +17,7 @@ public class VideoGame {
 		this.releaseDate = releaseDate;
 		this.reviewScore = reviewScore;
 		this.category = category;
-		this.rate = rate;
+		this.rating = rate;
 	}
 	
 	public Integer getId() {
@@ -42,8 +40,8 @@ public class VideoGame {
 		return category;
 	}
 	
-	public String getRate() {
-		return rate;
+	public String getRating() {
+		return rating;
 	}
 	
 	public void setID(Integer id) {
@@ -66,8 +64,8 @@ public class VideoGame {
 		this.category = category;
 	}
 	
-	public void setRate(String rate) {
-		this.rate = rate;
+	public void setRating(String rate) {
+		this.rating = rate;
 	}
 	
 }

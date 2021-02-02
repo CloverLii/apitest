@@ -42,7 +42,7 @@ public class BaseTest {
 		return BasePath.ADD_VIDEO_GAME;
 	}
 	
-	public static String updateVideoGame(Integer id, VideoGame videogame) {
+	public static String updateVideoGame(Integer id) {
 		return BasePath.UPDATE_VIDEO_GAME + id;
 	}
 	
@@ -53,7 +53,7 @@ public class BaseTest {
 		newVG.setID(getLastID() + 1);
 		newVG.setName(DataBuilder.getName());
 		newVG.setReleaseDate(DataBuilder.getReleaseDate());
-		newVG.setRate(DataBuilder.getRating());
+		newVG.setRating(DataBuilder.getRating());
 		newVG.setReviewScore(DataBuilder.getReviewScore());
 		newVG.setCategory(DataBuilder.getCategoryName());
 		
@@ -66,7 +66,7 @@ public class BaseTest {
 				+ vg.getReleaseDate() + ", "  
 				+ vg.getReviewScore() + ", "  
 				+ vg.getCategory() + ", " 
-				+ vg.getRate());				
+				+ vg.getRating());				
 	}
 	
 	// get a list of video game id
