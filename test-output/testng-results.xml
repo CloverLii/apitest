@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="2" ignored="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1793" started-at="2021-02-02T20:07:47 NZDT" finished-at="2021-02-02T20:07:49 NZDT">
+  <suite name="Default suite" duration-ms="1901" started-at="2021-02-03T04:14:23 NZDT" finished-at="2021-02-03T04:14:25 NZDT">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1793" started-at="2021-02-02T20:07:47 NZDT" finished-at="2021-02-02T20:07:49 NZDT">
+    <test name="Default test" duration-ms="1901" started-at="2021-02-03T04:14:23 NZDT" finished-at="2021-02-03T04:14:25 NZDT">
       <class name="testcases.TestUpdateVideoGame">
-        <test-method status="PASS" signature="getProperties(java.lang.String)[pri:0, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="getProperties" is-config="true" duration-ms="459" started-at="2021-02-02T20:07:46 NZDT" description="read properties files" finished-at="2021-02-02T20:07:47 NZDT">
+        <test-method status="PASS" signature="getProperties(java.lang.String)[pri:0, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="getProperties" is-config="true" duration-ms="380" started-at="2021-02-03T04:14:23 NZDT" description="read properties files" finished-at="2021-02-03T04:14:23 NZDT">
           <params>
             <param index="0">
               <value>
@@ -18,11 +18,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getProperties -->
-        <test-method status="PASS" signature="prepareDate()[pri:0, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="prepareDate" is-config="true" duration-ms="1468" started-at="2021-02-02T20:07:47 NZDT" description=" generate random video game info for adding" finished-at="2021-02-02T20:07:48 NZDT">
+        <test-method status="PASS" signature="prepareDate()[pri:0, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="prepareDate" is-config="true" duration-ms="1504" started-at="2021-02-03T04:14:23 NZDT" description=" generate random video game info for adding" finished-at="2021-02-03T04:14:25 NZDT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- prepareDate -->
-        <test-method status="FAIL" signature="testDeleteVideoGame()[pri:0, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="testDeleteVideoGame" duration-ms="154" started-at="2021-02-02T20:07:48 NZDT" description="API: delete a video game by id" finished-at="2021-02-02T20:07:49 NZDT">
+        <test-method status="FAIL" signature="testAddVideoGames()[pri:3, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="testAddVideoGames" duration-ms="220" started-at="2021-02-03T04:14:25 NZDT" description="API: add a new video game" finished-at="2021-02-03T04:14:25 NZDT">
           <exception class="org.xml.sax.SAXParseException">
             <message>
               <![CDATA[Content is not allowed in prolog.]]>
@@ -85,7 +85,7 @@ at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
 at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
 at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:298)
 at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-at testcases.TestUpdateVideoGame.testDeleteVideoGame(TestUpdateVideoGame.java:54)
+at testcases.TestUpdateVideoGame.testAddVideoGames(TestUpdateVideoGame.java:39)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -119,8 +119,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.xml.sax.SAXParseException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDeleteVideoGame -->
-        <test-method status="FAIL" signature="testAddVideoGames()[pri:3, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="testAddVideoGames" duration-ms="53" started-at="2021-02-02T20:07:49 NZDT" description="API: add a new video game" finished-at="2021-02-02T20:07:49 NZDT">
+        </test-method> <!-- testAddVideoGames -->
+        <test-method status="FAIL" signature="testPutVideoGame()[pri:4, instance:testcases.TestUpdateVideoGame@5ae50ce6]" name="testPutVideoGame" duration-ms="96" started-at="2021-02-03T04:14:25 NZDT" description="API: update a video game by id" finished-at="2021-02-03T04:14:25 NZDT">
           <exception class="org.xml.sax.SAXParseException">
             <message>
               <![CDATA[Content is not allowed in prolog.]]>
@@ -170,7 +170,7 @@ at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)
 at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnSuperN(ScriptBytecodeAdapter.java:144)
 at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy:298)
 at io.restassured.internal.ValidatableResponseImpl.body(ValidatableResponseImpl.groovy)
-at testcases.TestUpdateVideoGame.testAddVideoGames(TestUpdateVideoGame.java:37)
+at testcases.TestUpdateVideoGame.testPutVideoGame(TestUpdateVideoGame.java:61)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -204,7 +204,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.xml.sax.SAXParseException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testAddVideoGames -->
+        </test-method> <!-- testPutVideoGame -->
       </class> <!-- testcases.TestUpdateVideoGame -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

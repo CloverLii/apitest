@@ -8,7 +8,7 @@
           <include name="getProperties"/>
           <include name="prepareDate"/>
           <include name="testAddVideoGames"/>
-          <include name="testDeleteVideoGame"/>
+          <include name="testPutVideoGame"/>
         </methods>
       </class> <!-- testcases.TestUpdateVideoGame -->
     </classes>

@@ -9,13 +9,13 @@
   </listeners>
   <test thread-count="5" name="API automation test(failed)">
     <classes>
-      <class name="testcases.TestGetVideoGame">
+      <class name="testcases.TestUpdateVideoGame">
         <methods>
-          <include name="testSearchByID"/>
-          <include name="testGetAllVideoGames"/>
           <include name="getProperties"/>
+          <include name="prepareDate"/>
+          <include name="testAddVideoGames"/>
         </methods>
-      </class> <!-- testcases.TestGetVideoGame -->
+      </class> <!-- testcases.TestUpdateVideoGame -->
     </classes>
   </test> <!-- API automation test(failed) -->
 </suite> <!-- Failed suite [API Test Suite] -->
