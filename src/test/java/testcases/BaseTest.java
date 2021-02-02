@@ -14,15 +14,22 @@ import util.DataBuilder;
 import util.PropertiesReader;
 import util.VideoGame;
 
+
+/**
+ * Define regularly used methods in other test classes
+ * @author cloverli
+ * @date 03/02/2021
+ *
+ */
 public class BaseTest {
 	
-	@BeforeSuite(alwaysRun = true, description = "read properties files")
+	@BeforeSuite(alwaysRun = true, description = "read configurations from properties files")
 	@Parameters({"propertiesPath"})
 	public void getProperties(@Optional("src/test/resources/config/config.properties") String propertiesPath) throws IOException {
 		
 		// TODO: read maybe more than one properties files
 		PropertiesReader.readProperties(propertiesPath);
-		// get RestAssured baseURI
+		// get value RestAssured baseURI
 		RestAssured.baseURI = PropertiesReader.getKey("conf.baseURI");
 	}
 	
@@ -46,10 +53,11 @@ public class BaseTest {
 		return BasePath.UPDATE_VIDEO_GAME + id;
 	}
 	
-	// create new VideoGame object using generated random values
+	// create new VideoGame object using (partial) predefined random values
 	public static VideoGame newVideoGame() {
 		
 		VideoGame newVG = new VideoGame();
+		// unique id for each video game
 		newVG.setID(getLastID() + 1);
 		newVG.setName(DataBuilder.getName());
 		newVG.setReleaseDate(DataBuilder.getReleaseDate());
@@ -60,6 +68,7 @@ public class BaseTest {
 		return newVG;
 	}
 	
+	// print values of video game object for debugging
 	public static void printVGInfo(VideoGame vg) {
 		System.out.println("...new video game obj: " + vg.getId() + ", " 
 				+ vg.getName() + ", "  

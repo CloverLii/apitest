@@ -13,10 +13,11 @@ public class RandomUtil {
 	// contains all numbers and all characters
     private static String randomBase = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     private static String randomNumberBase = "0123456789";
-    // TODO: random base containing special characters for specific content
+    // TODO: randomBase containing special characters for certain content
 
     private static Random random = new Random();
 
+    // create random value within certain length: number-only or combination of numbers and letters
     public static String getRandom(int length, boolean onlyNumber) {
         String base;
         if (onlyNumber) {
@@ -31,7 +32,7 @@ public class RandomUtil {
             do {
                 int number = random.nextInt(base.length());
                 chr = base.charAt(number);
-            } while (i==0&&chr=='0') ;//第一个字符不能为0,
+            } while (i==0&&chr=='0') ; // the first number of char could not be '0'
 
             sb.append(chr);
         }

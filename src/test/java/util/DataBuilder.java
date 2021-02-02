@@ -4,25 +4,30 @@ import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
 import java.util.Random;
 
+/**
+ * 
+ * Generate predefined random values for testing
+ * @author cloverdolphin
+ * @date 03/02/2021
+ *
+ */
 public class DataBuilder {
-		
+	
+	// create unique id for new video game
 	public static Integer getId(int currentMaxId) {
 		return currentMaxId + 1;
 	}
 	
-	// TODO: generate meaningful category name, like random value in list
 	public static String getName() {
 		int numberLength = new Random().nextInt(8) + 1;
 		return ( "name_" + RandomUtil.getRandom(numberLength, false));
 	}
 	
-	// TODO: generate meaningful category name, like random value in list
 	public static String getCategoryName() {
 		int numberLength = new Random().nextInt(8) + 1;
 		return ( "category_" + RandomUtil.getRandom(numberLength, false));
 	}
 	
-	// TODO: generate meaningful rating, like random value in list
 	public static String getRating() {
 		int numberLength = new Random().nextInt(8) + 1;
 		return ( "rating_" + RandomUtil.getRandom(numberLength, false));
@@ -41,8 +46,8 @@ public class DataBuilder {
 		SimpleDateFormat sdf  = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
 		
 		Random rnd = new Random();
-		//Timestamp timestamp = new Timestamp(Math.abs(System.currentTimeMillis() - rnd.nextLong()));
-		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		Timestamp timestamp = new Timestamp(Math.abs(System.currentTimeMillis() - rnd.nextLong()));
+		//Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		return (sdf.format(timestamp));
 	}
 	

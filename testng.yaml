@@ -1,6 +1,7 @@
 name: API Test Suite
 configFailurePolicy: skip
-parameters: { baseURI: http://localhost:8080/app, propertiesPath: src/test/resources/config/config.properteis }
+parameters: { baseURI: http://localhost:8080/app, 
+			  propertiesPath: src/test/resources/config/config.properties }
 
 listeners:
   - listener.TestLogListener
@@ -8,6 +9,7 @@ listeners:
 
 tests:
   - name: API automation test
-  	classes:
+  classes:
+    - testcases.TestGetVideoGame
     - testcases.TestUpdateVideoGame
 

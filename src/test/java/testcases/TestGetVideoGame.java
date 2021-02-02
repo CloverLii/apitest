@@ -6,6 +6,12 @@ import io.restassured.http.ContentType;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+/**
+ * Test 'get video game' related APIs: get_all_video_games, get_video_game_by_id
+ * @author cloverli
+ * @date 03/02/2021
+ *
+ */
 public class TestGetVideoGame extends BaseTest {
 
 	
@@ -27,6 +33,7 @@ public class TestGetVideoGame extends BaseTest {
 	@Test(description = "API: get one Video Game by id", priority = 2)
 	public void testSearchByID(){
 		
+		// use certain video game for regression test
 		RestAssured.basePath = BaseTest.getVideoGameByID(2);
 		
 		given()

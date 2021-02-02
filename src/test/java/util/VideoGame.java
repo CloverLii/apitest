@@ -1,5 +1,11 @@
 package util;
 
+/**
+ * VideoGame
+ * @author cloverli
+ * @date 03/02/2021
+ *
+ */
 public class VideoGame {
 		
 	private Integer id;

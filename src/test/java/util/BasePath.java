@@ -1,5 +1,11 @@
 package util;
 
+/**
+ * 
+ * @author cloverli
+ * @date 03/02/2021
+ *
+ */
 public class BasePath {
 	
 	// GET: get a list of all video games

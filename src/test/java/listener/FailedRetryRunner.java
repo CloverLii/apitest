@@ -3,6 +3,8 @@ package listener;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
+import util.PropertiesReader;
+
 /**
  * 
  * @author cloverli
@@ -12,7 +14,9 @@ import org.testng.ITestResult;
 public class FailedRetryRunner implements IRetryAnalyzer{
 	
 	private int retryCount = 0;
-	private static final int maxRetryCount = 3;
+	
+	// get 'maxRetryCount' from config.properties file
+	private static final int maxRetryCount = Integer.parseInt(PropertiesReader.getKey("conf.maxRetryCount"));
 
 	public boolean retry(ITestResult iTestResult) {
 		if (retryCount < maxRetryCount) {

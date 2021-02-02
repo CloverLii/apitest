@@ -7,11 +7,11 @@ import org.testng.ITestContext;
 
 /**
  * 
+ * Write log in testing execution, get screenshot when test fails
  * @author cloverli
  * @date 31/01/2021
  *
  */
-
 public class TestLogListener extends TestListenerAdapter {
    
 	@Override
