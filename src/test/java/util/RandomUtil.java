@@ -1,9 +1,7 @@
 package util;
+
 import java.util.Random;
-
 import org.testng.log4testng.Logger;
-
-import testcases.BaseTest;
 
 /**
  * 

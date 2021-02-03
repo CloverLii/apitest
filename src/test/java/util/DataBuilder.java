@@ -3,10 +3,8 @@ package util;
 import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
 import java.util.Random;
-
 import org.testng.log4testng.Logger;
 
-import testcases.BaseTest;
 
 /**
  * 
