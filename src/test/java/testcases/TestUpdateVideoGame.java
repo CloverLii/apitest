@@ -34,7 +34,7 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	//TODO: high lever modelization according to actual project 
-	@Test(description = "API: add a new video game", priority = 3)	
+	@Test(description = "API: add a new video game", groups = {"positive"}, priority = 3)	
 	public void testAddVideoGames() throws JsonProcessingException {
 		
 		RestAssured.basePath = BaseTest.addNewVideoGame();
@@ -53,7 +53,7 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	
-	@Test(description = "API: update a video game by id", priority = 4)
+	@Test(description = "API: update a video game by id", groups = {"positive"},  priority = 4)
 	public void testPutVideoGame() throws JsonProcessingException {
 		
 		// update newly added video game as using a public mock server
@@ -78,7 +78,7 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	
-	@Test (description = "API: delete a video game by id", priority = 5)
+	@Test (description = "API: delete a video game by id", groups = {"positive"}, priority = 5)
 	public void testDeleteVideoGame() {
 		
 		// delete newly added video game as using a public mock server

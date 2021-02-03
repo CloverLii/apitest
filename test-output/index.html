@@ -61,7 +61,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="group-Default_suite">
-                    <span>0 groups</span>
+                    <span>1 group</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,7 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -104,12 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="testcases.TestGetVideoGame" hash-for-method="testGetAllVideoGames">testGetAllVideoGames</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="testcases.TestGetVideoGame" hash-for-method="testSearchByID">testSearchByID</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="testcases.TestGetVideoGame" hash-for-method="testSearchByInvalidID">testSearchByInvalidID</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -132,20 +127,11 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testGetAllVideoGames">
-                  </a> <!-- testGetAllVideoGames -->
-                  <span class="method-name">testGetAllVideoGames</span>
+                  <a name="testSearchByInvalidID">
+                  </a> <!-- testSearchByInvalidID -->
+                  <span class="method-name">testSearchByInvalidID</span>
                   <em>
-(API: get a list of all Video Games)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testSearchByID">
-                  </a> <!-- testSearchByID -->
-                  <span class="method-name">testSearchByID</span>
-                  <em>
-(API: get one Video Game by id)                  </em>
+(API: try to get video game by invalid id)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -153,7 +139,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/private/var/folders/2m/55tfmpm53tn3y5p63wwsw1mh0000gp/T/testng-eclipse-699431598/testng-customsuite.xml</span>
+            <span class="header-content">/private/var/folders/2m/55tfmpm53tn3y5p63wwsw1mh0000gp/T/testng-eclipse--1496836073/testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -162,7 +148,11 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testcases.TestGetVideoGame&quot;/&gt;
+      &lt;class name=&quot;testcases.TestGetVideoGame&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;testSearchByInvalidID&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testcases.TestGetVideoGame --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -186,6 +176,14 @@
             <span class="header-content">Groups for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">negtive</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testSearchByInvalidID</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="times-Default_suite" class="panel">
@@ -202,15 +200,11 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testGetAllVideoGames')
+data.setCell(0, 1, 'testSearchByInvalidID')
 data.setCell(0, 2, 'testcases.TestGetVideoGame')
-data.setCell(0, 3, 974);
-data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testSearchByID')
-data.setCell(1, 2, 'testcases.TestGetVideoGame')
-data.setCell(1, 3, 616);
+data.setCell(0, 3, 1951);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -230,9 +224,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testcases.TestGetVideoGame</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">testSearchByID</span>
+                <br/>
+                <span class="ignored-method-name">testGetAllVideoGames</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -247,12 +250,8 @@ return data;
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="test-method">
-                <span class="method-name">testGetAllVideoGames</span>
-                <span class="method-start">399 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">testSearchByID</span>
-                <span class="method-start">1463 ms</span>
+                <span class="method-name">testSearchByInvalidID</span>
+                <span class="method-start">572 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
