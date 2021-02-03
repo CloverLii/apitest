@@ -2,6 +2,10 @@ package listener;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
+import org.testng.log4testng.Logger;
+
+import testcases.BaseTest;
+import util.PropertiesReader;
 
 /**
  * 
@@ -11,12 +15,17 @@ import org.testng.ITestResult;
  */
 public class FailedRetryRunner implements IRetryAnalyzer{
 	
+	static Logger log = Logger.getLogger(FailedRetryRunner.class);
+	
 	private int retryCount = 0;
-	private static final int maxRetryCount = 3;
+	
+	// get 'maxRetryCount' from config.properties file
+	private static final int maxRetryCount = Integer.parseInt(PropertiesReader.getKey("conf.maxRetryCount"));
 
 	public boolean retry(ITestResult iTestResult) {
 		if (retryCount < maxRetryCount) {
 			retryCount++;
+			log.info(String.format("====retry failed test: %d", retryCount));
 			return true;
 		} else {
 			return false;

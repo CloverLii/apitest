@@ -3,9 +3,13 @@ package testcases;
 import static io.restassured.RestAssured.given;
 import java.io.IOException;
 import java.util.List;
+
+import org.apache.log4j.PropertyConfigurator;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+import org.testng.log4testng.Logger;
+
 import io.restassured.RestAssured;
 import io.restassured.internal.path.xml.NodeChildrenImpl;
 import io.restassured.path.xml.element.Node;
@@ -14,16 +18,30 @@ import util.DataBuilder;
 import util.PropertiesReader;
 import util.VideoGame;
 
+
+/**
+ * 
+ * Define regularly used methods in other test classes
+ * @author cloverli
+ * @date 03/02/2021
+ *
+ */
 public class BaseTest {
 	
-	@BeforeSuite(alwaysRun = true, description = "read properties files")
-	@Parameters({"propertiesPath"})
-	public void getProperties(@Optional("src/test/resources/config/config.properties") String propertiesPath) throws IOException {
+	static Logger log = Logger.getLogger(BaseTest.class);
+	
+	@BeforeSuite(alwaysRun = true, description = "read configurations from properties files")
+	@Parameters({"propertiesPath", "log4jConPath"})
+	public void getProperties(@Optional("src/test/resources/config/config.properties") String propertiesPath, 
+							  @Optional("src/test/resources/config/log4j.properties")String log4jConPath) throws IOException {
 		
 		// TODO: read maybe more than one properties files
 		PropertiesReader.readProperties(propertiesPath);
-		// get RestAssured baseURI
+		// get value RestAssured baseURI
 		RestAssured.baseURI = PropertiesReader.getKey("conf.baseURI");
+		log.info(String.format("====RestAssured baseURI = %s ====", PropertiesReader.getKey("conf.baseURI")));
+		// read configuration file of log4j
+		PropertyConfigurator.configure(log4jConPath);
 	}
 	
 	public static String getAllVideoGames() {
@@ -46,10 +64,11 @@ public class BaseTest {
 		return BasePath.UPDATE_VIDEO_GAME + id;
 	}
 	
-	// create new VideoGame object using generated random values
+	// create new VideoGame object using (partial) predefined random values
 	public static VideoGame newVideoGame() {
 		
 		VideoGame newVG = new VideoGame();
+		// unique id for each video game
 		newVG.setID(getLastID() + 1);
 		newVG.setName(DataBuilder.getName());
 		newVG.setReleaseDate(DataBuilder.getReleaseDate());
@@ -60,13 +79,17 @@ public class BaseTest {
 		return newVG;
 	}
 	
+	// print values of video game object for debugging
 	public static void printVGInfo(VideoGame vg) {
-		System.out.println("...new video game obj: " + vg.getId() + ", " 
+		String vgInfo = 
+		"...new video game obj: " + vg.getId() + ", " 
 				+ vg.getName() + ", "  
 				+ vg.getReleaseDate() + ", "  
 				+ vg.getReviewScore() + ", "  
 				+ vg.getCategory() + ", " 
-				+ vg.getRating());				
+				+ vg.getRating();	
+		
+		log.info(String.format("====video game values : %s ====", vgInfo));
 	}
 	
 	// get a list of video game id
@@ -77,6 +100,8 @@ public class BaseTest {
 		List<Node> idNodeList = idNodes.list();
 		
 		System.out.println("...idNodeList[" + idNodeList.size() + "]: " + idNodeList);
+		log.info(String.format("====idNodeList[%d]:  %s ====", idNodeList.size(), idNodeList.toString()));
+		
 		return idNodeList;
 	}	
 	
@@ -85,6 +110,7 @@ public class BaseTest {
 		List<Node> idList = getAllVideoGamesIDs();
 		int lastID = Integer.parseInt(idList.get(idList.size()-1).value());
 		System.out.println("...id of last video game is: " + lastID);
+		log.info(String.format("====id of last video game is: %d ====", lastID));
 		return lastID;
 	}
 }

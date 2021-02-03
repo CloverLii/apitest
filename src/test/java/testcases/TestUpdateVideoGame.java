@@ -5,31 +5,43 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import util.FormatConverterUtil;
+import org.testng.log4testng.Logger;
+
+import util.FormatConverter;
 import util.VideoGame;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
 
+/**
+ * 
+ * Test 'update video game' related APIs: add_new_video_games, update_video_game_by_id, delete_video_game_by_id
+ * @author cloverli
+ * @date 03/02/2021
+ *
+ */
 public class TestUpdateVideoGame extends BaseTest {
+	
+	static Logger log = Logger.getLogger(TestUpdateVideoGame.class);
 	
 	private VideoGame videoGame;
 	
-	@BeforeTest(alwaysRun= true, description = " generate random video game info for adding")
+	@BeforeTest(alwaysRun= true, description = " generate a new video game object")
 	public void prepareDate() {
 		
 		videoGame = BaseTest.newVideoGame();
 		BaseTest.printVGInfo(videoGame);
 	}
 	
-	
-	@Test(description = "API: add a new video game", priority = 3)	
+	//TODO: high lever modelization according to actual project 
+	@Test(description = "API: add a new video game", groups = {"positive"}, priority = 3)	
 	public void testAddVideoGames() throws JsonProcessingException {
 		
 		RestAssured.basePath = BaseTest.addNewVideoGame();
 		given()
 			.contentType("application/json")
-			.body(FormatConverterUtil.obj2Json(videoGame))
+			// convert VideoGame object to format Json
+			.body(FormatConverter.obj2Json(videoGame))
 		.when()
 			.post()
 		.then()
@@ -41,17 +53,19 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	
-	@Test(description = "API: update a video game by id", priority = 4)
-	public void testPutVideoGame() {
+	@Test(description = "API: update a video game by id", groups = {"positive"},  priority = 4)
+	public void testPutVideoGame() throws JsonProcessingException {
 		
+		// update newly added video game as using a public mock server
 		RestAssured.basePath = BaseTest.updateVideoGame(videoGame.getId());
 		System.out.println("...the name of video game before updating: " + videoGame.getName());
 		
+		// use certain name for regression testing
 		videoGame.setName("name_updated");
 		
 		given()	
 			.contentType("application/json")
-			.body(videoGame)
+			.body(FormatConverter.obj2Json(videoGame))
 		.when()
 			.delete()
 		.then()
@@ -64,9 +78,10 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	
-	//@Test (description = "API: delete a video game by id", priority = 5)
+	@Test (description = "API: delete a video game by id", groups = {"positive"}, priority = 5)
 	public void testDeleteVideoGame() {
-			
+		
+		// delete newly added video game as using a public mock server
 		RestAssured.basePath = BaseTest.deleteVideoGameByID(videoGame.getId());
 		System.out.println("...the id of last video game before deleting: " + videoGame.getId());
 		
