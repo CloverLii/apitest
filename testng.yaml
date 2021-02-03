@@ -1,7 +1,8 @@
 name: API Test Suite
 configFailurePolicy: skip
 parameters: { baseURI: http://localhost:8080/app, 
-			  propertiesPath: src/test/resources/config/config.properties }
+			  propertiesPath: src/test/resources/config/config.properties,
+			  log4jConPath:src/test/resources/config/log4j.properties }
 
 listeners:
   - listener.TestLogListener

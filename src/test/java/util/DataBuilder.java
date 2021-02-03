@@ -4,6 +4,10 @@ import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
 import java.util.Random;
 
+import org.testng.log4testng.Logger;
+
+import testcases.BaseTest;
+
 /**
  * 
  * Generate predefined random values for testing
@@ -12,6 +16,8 @@ import java.util.Random;
  *
  */
 public class DataBuilder {
+	
+	static Logger log = Logger.getLogger(DataBuilder.class);
 	
 	// create unique id for new video game
 	public static Integer getId(int currentMaxId) {

@@ -7,10 +7,13 @@ import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.testng.log4testng.Logger;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+
+import testcases.BaseTest;
 
 /**
  * 
@@ -21,17 +24,21 @@ import com.fasterxml.jackson.databind.ObjectWriter;
  */
 public class FormatConverter {
 	
+	static Logger log = Logger.getLogger(FormatConverter.class);
+	
 	// convert VideoGame object to Json string
 	public static String obj2Json(VideoGame vg) throws JsonProcessingException {
 		
 		//String jsonStr = new ObjectMapper().writeValueAsString(vg);
 		
+		// show values in a more readable style
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String jsonStr = ow.writeValueAsString(vg);
 		System.out.println("...VideoGame object to json: " + jsonStr);
 		return jsonStr;		
 	}
 	
+	// convert Json string to Json object
 	public JSONObject readFromJson(String jsonFilePath) throws IOException, FileNotFoundException, ParseException{
 			
 			JSONParser jsonParser = new JSONParser();

@@ -5,6 +5,8 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+import org.testng.log4testng.Logger;
+
 import util.FormatConverter;
 import util.VideoGame;
 
@@ -19,6 +21,8 @@ import static org.hamcrest.Matchers.equalTo;
  *
  */
 public class TestUpdateVideoGame extends BaseTest {
+	
+	static Logger log = Logger.getLogger(TestUpdateVideoGame.class);
 	
 	private VideoGame videoGame;
 	

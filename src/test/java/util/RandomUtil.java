@@ -1,6 +1,10 @@
 package util;
 import java.util.Random;
 
+import org.testng.log4testng.Logger;
+
+import testcases.BaseTest;
+
 /**
  * 
  * @reference https://github.com/CloverLii/ApiAutoTest/blob/master/src/main/java/com/iiaccount/utils/RandomUtil.java
@@ -9,6 +13,8 @@ import java.util.Random;
  *
  */
 public class RandomUtil {
+	
+	static Logger log = Logger.getLogger(RandomUtil.class);
 
 	// contains all numbers and all characters
     private static String randomBase = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
