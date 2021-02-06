@@ -866,3 +866,179 @@
 2021-02-07 03:54:28  [org.apache.http.wire]-[DEBUG]  << "[\r][\n]"
 2021-02-07 03:54:28  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@39f4a7c4
 2021-02-07 03:54:28  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Connection 0.0.0.0:57104<->127.0.0.1:8080 shut down
+2021-02-07 04:02:50  [testcases.BaseTest]-[INFO] ====RestAssured baseURI = http://localhost:8080/app ====
+2021-02-07 04:02:52  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Get connection for route {}->http://localhost:8080
+2021-02-07 04:02:52  [org.apache.http.impl.conn.DefaultClientConnectionOperator]-[DEBUG] Connecting to localhost:8080
+2021-02-07 04:02:52  [org.apache.http.client.protocol.RequestAddCookies]-[DEBUG] CookieSpec selected: ignoreCookies
+2021-02-07 04:02:52  [org.apache.http.client.protocol.RequestAuthCache]-[DEBUG] Auth cache not set in the context
+2021-02-07 04:02:52  [org.apache.http.client.protocol.RequestTargetAuthentication]-[DEBUG] Target auth state: UNCHALLENGED
+2021-02-07 04:02:52  [org.apache.http.client.protocol.RequestProxyAuthentication]-[DEBUG] Proxy auth state: UNCHALLENGED
+2021-02-07 04:02:52  [org.apache.http.impl.client.DefaultHttpClient]-[DEBUG] Attempt 1 to execute request
+2021-02-07 04:02:52  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Sending request: GET /app/videogames HTTP/1.1
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  >> "GET /app/videogames HTTP/1.1[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  >> "Accept: */*[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  >> "Host: localhost:8080[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  >> "User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  >> "[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] >> GET /app/videogames HTTP/1.1
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] >> Accept: */*
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] >> Host: localhost:8080
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] >> Connection: Keep-Alive
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] >> User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] >> Accept-Encoding: gzip,deflate
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  << "Content-Type: application/xml[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  << "Content-Length: 1862[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  << "Date: Sat, 06 Feb 2021 15:02:52 GMT[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  << "[\r][\n]"
+2021-02-07 04:02:52  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Receiving response: HTTP/1.1 200 
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] << HTTP/1.1 200 
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] << Content-Type: application/xml
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] << Content-Length: 1862
+2021-02-07 04:02:52  [org.apache.http.headers]-[DEBUG] << Date: Sat, 06 Feb 2021 15:02:52 GMT
+2021-02-07 04:02:52  [org.apache.http.impl.client.DefaultHttpClient]-[DEBUG] Connection can be kept alive indefinitely
+2021-02-07 04:02:52  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsing response as: application/xml
+2021-02-07 04:02:52  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2021-02-07 04:02:52  [org.apache.http.wire]-[DEBUG]  << "<?xml version="1.0" encoding="UTF-8" standalone="yes"?><videoGames><videoGame category="Shooter" rating="Universal"><id>1</id><name>Resident Evil 4</name><releaseDate>2005-10-01T00:00:00+12:00</releaseDate><reviewScore>85</reviewScore></videoGame><videoGame category="Driving" rating="Universal"><id>2</id><name>Gran Turismo 3</name><releaseDate>2001-03-10T00:00:00+13:00</releaseDate><reviewScore>91</reviewScore></videoGame><videoGame category="Puzzle" rating="Universal"><id>3</id><name>Tetris</name><releaseDate>1984-06-25T00:00:00+12:00</releaseDate><reviewScore>88</reviewScore></videoGame><videoGame category="Platform" rating="Universal"><id>4</id><name>Super Mario 64</name><releaseDate>1996-10-20T00:00:00+13:00</releaseDate><reviewScore>90</reviewScore></videoGame><videoGame category="Adventure" rating="PG-13"><id>5</id><name>The Legend of Zelda: Ocarina of Time</name><releaseDate>1998-12-10T00:00:00+13:00</releaseDate><reviewScore>93</reviewScore></videoGame><videoGame category="Shooter" rating="Mature"><id>6</id><name>Doom</name><releaseDate>1993-02-18T00:00:00+13:00</releaseDate><reviewScore>81</reviewScore></videoGame><videoGame category="Puzzle" rating="Universal"><id>7</id><name>Minecraft</name><releaseDate>2011-12-05T00:00:00+13:00</releaseDate><reviewScore>77</reviewScore></videoGame><videoGame category="Strategy" rating="Universal"><id>8</id><name>SimCity 2000</name><releaseDate>1994-09-11T00:00:00+12:00</releaseDate><reviewScore>88</reviewScore></videoGame><videoGame category="RPG" rating="PG-13"><id>9</id><name>Final Fantasy VII</name><releaseDate>1997-08-20T00:00:00+12:00</releaseDate><reviewScore>97</reviewScore></videoGame><videoGame category="Driving" rating="Mature"><id>10</id><name>Grand Theft Auto III</name><releaseDate>2001-04-23T00:00:00+12:00</releaseDate><reviewScore>90</reviewScore></videoGame></videoGames>"
+2021-02-07 04:02:52  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@374c40ba
+2021-02-07 04:02:52  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Connection can be kept alive indefinitely
+2021-02-07 04:02:53  [testcases.BaseTest]-[INFO] ====idNodeList[10]:  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] ====
+2021-02-07 04:02:53  [testcases.BaseTest]-[INFO] ====id of last video game is: 10 ====
+2021-02-07 04:02:53  [testcases.BaseTest]-[INFO] ====video game values : ...new video game obj: 11, name_uNS7, 211751716-05-27T17:33:05, 82, category_hL7Q4z, rating_9 ====
+2021-02-07 04:02:54  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Get connection for route {}->http://localhost:8080
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnectionOperator]-[DEBUG] Connecting to localhost:8080
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestAddCookies]-[DEBUG] CookieSpec selected: ignoreCookies
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestAuthCache]-[DEBUG] Auth cache not set in the context
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestTargetAuthentication]-[DEBUG] Target auth state: UNCHALLENGED
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestProxyAuthentication]-[DEBUG] Proxy auth state: UNCHALLENGED
+2021-02-07 04:02:54  [org.apache.http.impl.client.DefaultHttpClient]-[DEBUG] Attempt 1 to execute request
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Sending request: POST /app/videogames HTTP/1.1
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "POST /app/videogames HTTP/1.1[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Accept: */*[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Content-Length: 166[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Host: localhost:8080[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> POST /app/videogames HTTP/1.1
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Accept: */*
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Content-Type: application/json; charset=UTF-8
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Content-Length: 166
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Host: localhost:8080
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Connection: Keep-Alive
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Accept-Encoding: gzip,deflate
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "{[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "id" : 11,[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "name" : "name_uNS7",[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "releaseDate" : "211751716-05-27T17:33:05",[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "reviewScore" : 82,[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "category" : "category_hL7Q4z",[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "rating" : "rating_9"[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "}"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "HTTP/1.1 400 [\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Content-Type: text/plain[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Content-Length: 574[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Date: Sat, 06 Feb 2021 15:02:54 GMT[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Connection: close[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Receiving response: HTTP/1.1 400 
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << HTTP/1.1 400 
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Content-Type: text/plain
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Content-Length: 574
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Date: Sat, 06 Feb 2021 15:02:54 GMT
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Connection: close
+2021-02-07 04:02:54  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsing response as: text/plain
+2021-02-07 04:02:54  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2021-02-07 04:02:54  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Get connection for route {}->http://localhost:8080
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnectionOperator]-[DEBUG] Connecting to localhost:8080
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestAddCookies]-[DEBUG] CookieSpec selected: ignoreCookies
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestAuthCache]-[DEBUG] Auth cache not set in the context
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestTargetAuthentication]-[DEBUG] Target auth state: UNCHALLENGED
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestProxyAuthentication]-[DEBUG] Proxy auth state: UNCHALLENGED
+2021-02-07 04:02:54  [org.apache.http.impl.client.DefaultHttpClient]-[DEBUG] Attempt 1 to execute request
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Sending request: DELETE /app/videogames/11 HTTP/1.1
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "DELETE /app/videogames/11 HTTP/1.1[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Accept: */*[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Content-Length: 169[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Host: localhost:8080[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> DELETE /app/videogames/11 HTTP/1.1
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Accept: */*
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Content-Type: application/json; charset=UTF-8
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Content-Length: 169
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Host: localhost:8080
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Connection: Keep-Alive
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Accept-Encoding: gzip,deflate
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "{[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "id" : 11,[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "name" : "name_updated",[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "releaseDate" : "211751716-05-27T17:33:05",[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "reviewScore" : 82,[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "category" : "category_hL7Q4z",[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "  "rating" : "rating_9"[\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "}"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Content-Type: application/xml[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Content-Length: 41[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Date: Sat, 06 Feb 2021 15:02:54 GMT[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Receiving response: HTTP/1.1 200 
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << HTTP/1.1 200 
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Content-Type: application/xml
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Content-Length: 41
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Date: Sat, 06 Feb 2021 15:02:54 GMT
+2021-02-07 04:02:54  [org.apache.http.impl.client.DefaultHttpClient]-[DEBUG] Connection can be kept alive indefinitely
+2021-02-07 04:02:54  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsing response as: application/xml
+2021-02-07 04:02:54  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "{"status": "Record Deleted Successfully"}"
+2021-02-07 04:02:54  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@25589735
+2021-02-07 04:02:54  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Connection can be kept alive indefinitely
+2021-02-07 04:02:54  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Get connection for route {}->http://localhost:8080
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnectionOperator]-[DEBUG] Connecting to localhost:8080
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestAddCookies]-[DEBUG] CookieSpec selected: ignoreCookies
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestAuthCache]-[DEBUG] Auth cache not set in the context
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestTargetAuthentication]-[DEBUG] Target auth state: UNCHALLENGED
+2021-02-07 04:02:54  [org.apache.http.client.protocol.RequestProxyAuthentication]-[DEBUG] Proxy auth state: UNCHALLENGED
+2021-02-07 04:02:54  [org.apache.http.impl.client.DefaultHttpClient]-[DEBUG] Attempt 1 to execute request
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Sending request: DELETE /app/videogames/11 HTTP/1.1
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "DELETE /app/videogames/11 HTTP/1.1[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Content-Type: application/json; charset=UTF-8[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Accept: */*[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Host: localhost:8080[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Connection: Keep-Alive[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "Accept-Encoding: gzip,deflate[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  >> "[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> DELETE /app/videogames/11 HTTP/1.1
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Content-Type: application/json; charset=UTF-8
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Accept: */*
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Host: localhost:8080
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Connection: Keep-Alive
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> User-Agent: Apache-HttpClient/4.5.3 (Java/1.8.0_131)
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] >> Accept-Encoding: gzip,deflate
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "HTTP/1.1 200 [\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Content-Type: application/xml[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Content-Length: 41[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "Date: Sat, 06 Feb 2021 15:02:54 GMT[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "[\r][\n]"
+2021-02-07 04:02:54  [org.apache.http.impl.conn.DefaultClientConnection]-[DEBUG] Receiving response: HTTP/1.1 200 
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << HTTP/1.1 200 
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Content-Type: application/xml
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Content-Length: 41
+2021-02-07 04:02:54  [org.apache.http.headers]-[DEBUG] << Date: Sat, 06 Feb 2021 15:02:54 GMT
+2021-02-07 04:02:54  [org.apache.http.impl.client.DefaultHttpClient]-[DEBUG] Connection can be kept alive indefinitely
+2021-02-07 04:02:54  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsing response as: application/xml
+2021-02-07 04:02:54  [io.restassured.internal.RequestSpecificationImpl$RestAssuredHttpBuilder]-[DEBUG] Parsed data to instance of: class org.apache.http.conn.EofSensorInputStream
+2021-02-07 04:02:54  [org.apache.http.wire]-[DEBUG]  << "{"status": "Record Deleted Successfully"}"
+2021-02-07 04:02:54  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Releasing connection org.apache.http.impl.conn.ManagedClientConnectionImpl@407f2029
+2021-02-07 04:02:54  [org.apache.http.impl.conn.BasicClientConnectionManager]-[DEBUG] Connection can be kept alive indefinitely

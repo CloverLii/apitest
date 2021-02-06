@@ -1,7 +1,9 @@
 package util;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
@@ -16,10 +18,21 @@ public class CSVReader{
 	
 	private static Logger log = LoggerFactory.getLogger(CSVReader.class);
 	
-	public static void readCSV(String csvPath) throws FileNotFoundException {
-			
-		FileReader reader = new FileReader(csvPath);
+	public static void readCSV(String csvPath) {
 		
-		//TODO: read test cases from template csv file
+		String line = "";
+		String splitBy = ",";
+		try {
+			// parse csv file into BufferedReader object	
+			BufferedReader br = new BufferedReader(new FileReader(csvPath));
+			while((line = br.readLine())!= null) {
+				// TODO: update based on actual requirement
+				String[] videoGame = line.split(splitBy);
+				log.info("==== content of test data: %s", videoGame.toString());
+			}
+			br.close();
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
