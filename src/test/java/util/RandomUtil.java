@@ -1,7 +1,9 @@
 package util;
 
 import java.util.Random;
-import org.testng.log4testng.Logger;
+
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * 
@@ -12,7 +14,7 @@ import org.testng.log4testng.Logger;
  */
 public class RandomUtil {
 	
-	static Logger log = Logger.getLogger(RandomUtil.class);
+	private static Logger log = LoggerFactory.getLogger(RandomUtil.class);
 
 	// contains all numbers and all characters
     private static String randomBase = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

@@ -3,7 +3,8 @@ package listener;
 
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
-import org.testng.log4testng.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.testng.ITestContext;
 
 /**
@@ -15,7 +16,7 @@ import org.testng.ITestContext;
  */
 public class TestLogListener extends TestListenerAdapter {
 	
-	static Logger log = Logger.getLogger(TestLogListener.class);
+	private static Logger log = LoggerFactory.getLogger(TestLogListener.class);
    
 	@Override
     public void onStart(ITestContext iTestContext) {

@@ -6,7 +6,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
-import org.testng.log4testng.Logger;
+
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /***
  * 
@@ -17,7 +19,7 @@ import org.testng.log4testng.Logger;
  */
 public class PropertiesReader {
 	
-	static Logger log = Logger.getLogger(PropertiesReader.class);
+	private static Logger log = LoggerFactory.getLogger(PropertiesReader.class);
 
 	private static final Properties PROPERTIES = new Properties();
 	

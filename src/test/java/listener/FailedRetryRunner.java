@@ -1,9 +1,9 @@
 package listener;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
-import org.testng.log4testng.Logger;
-
 import testcases.BaseTest;
 import util.PropertiesReader;
 
@@ -15,7 +15,7 @@ import util.PropertiesReader;
  */
 public class FailedRetryRunner implements IRetryAnalyzer{
 	
-	static Logger log = Logger.getLogger(FailedRetryRunner.class);
+	private static Logger log = LoggerFactory.getLogger(FailedRetryRunner.class);
 	
 	private int retryCount = 0;
 	

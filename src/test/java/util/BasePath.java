@@ -12,7 +12,7 @@ public class BasePath {
 	public static final String GET_ALL_VIDEO_GAMES = "/videogames";
 	
 	// GET: get a single video game by ID
-	public static final String GET_VIDEO_GAME_BY_ID = "videogames/";
+	public static final String GET_VIDEO_GAME_BY_ID = "/videogames/";
 	
 	// POST: add a new video game
 	public static final String ADD_VIDEO_GAME = "/videogames";
