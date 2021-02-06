@@ -6,7 +6,8 @@ import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.testng.log4testng.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
@@ -20,7 +21,7 @@ import com.fasterxml.jackson.databind.ObjectWriter;
  */
 public class FormatConverter {
 	
-	static Logger log = Logger.getLogger(FormatConverter.class);
+	private static Logger log = LoggerFactory.getLogger(FormatConverter.class);
 	
 	// convert VideoGame object to Json string
 	public static String obj2Json(VideoGame vg) throws JsonProcessingException {

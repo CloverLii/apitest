@@ -1,12 +1,20 @@
 package testcases;
 
 import org.testng.annotations.Test;
-import org.testng.log4testng.Logger;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Story;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 
@@ -15,11 +23,17 @@ import static org.hamcrest.Matchers.equalTo;
  * @date 03/02/2021
  *
  */
+
+@Epic("Regression Tests")
+@Feature("Get Video Game APIs")
 public class TestGetVideoGame extends BaseTest {
 	
-	static Logger log = Logger.getLogger(TestGetVideoGame.class);
+	private static Logger log = LoggerFactory.getLogger(TestGetVideoGame.class);
 	
-	@Test(description = "API: get a list of all Video Games", groups = {"positive"}, priority = 1)
+	@Test(description = "API test: get all video games", groups = {"positive"}, priority = 1)
+	@Severity(SeverityLevel.BLOCKER)
+	@Description("Test description: GET, /videogames, get a list of all video games")
+	@Story("Get all video games test")
 	public void testGetAllVideoGames() {
 		
 		RestAssured.basePath = BaseTest.getAllVideoGames();	
@@ -35,7 +49,10 @@ public class TestGetVideoGame extends BaseTest {
 	}
 		
 	
-	@Test(description = "API: get one Video Game by id", groups = {"positive"}, priority = 2)
+	@Test(description = "API test: get one video game", groups = {"positive"}, priority = 2)
+	@Severity(SeverityLevel.BLOCKER)
+	@Description("Test description: GET, /videogames/videoGameId, get a video game by id")
+	@Story("Get one video game by id")
 	public void testSearchByID(){
 		
 		// use certain video game for regression test
@@ -57,7 +74,10 @@ public class TestGetVideoGame extends BaseTest {
 			.body("videoGame.@rating", equalTo("Universal"));
 	}	
 	
-	@Test(description="API: try to get video game by invalid id", groups = {"negtive"}, priority = 3)
+	@Test(description="API test: get video game by invalid id", groups = {"negtive"}, priority = 3)
+	@Severity(SeverityLevel.NORMAL)
+	@Description("Test description: GET, /videogames/videoGameId, try to get a video game by invalid id")
+	@Story("Using invalid id when search one video game")
 	public void testSearchByInvalidID() {
 		
 		// use invalid video game for regression test

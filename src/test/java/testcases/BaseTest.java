@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.util.List;
 
 import org.apache.log4j.PropertyConfigurator;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-import org.testng.log4testng.Logger;
 
 import io.restassured.RestAssured;
 import io.restassured.internal.path.xml.NodeChildrenImpl;
@@ -28,12 +29,12 @@ import util.VideoGame;
  */
 public class BaseTest {
 	
-	static Logger log = Logger.getLogger(BaseTest.class);
+	private static Logger log = LoggerFactory.getLogger(BaseTest.class);
 	
 	@BeforeSuite(alwaysRun = true, description = "read configurations from properties files")
 	@Parameters({"propertiesPath", "log4jConPath"})
 	public void getProperties(@Optional("src/test/resources/config/config.properties") String propertiesPath, 
-							  @Optional("src/test/resources/config/log4j.properties")String log4jConPath) throws IOException {
+							  @Optional("src/test/resources/log4j.properties")String log4jConPath) throws IOException {
 		
 		// TODO: read maybe more than one properties files
 		PropertiesReader.readProperties(propertiesPath);

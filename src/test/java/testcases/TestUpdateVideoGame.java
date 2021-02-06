@@ -1,17 +1,22 @@
 package testcases;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import org.testng.log4testng.Logger;
-
 import util.FormatConverter;
 import util.VideoGame;
-
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * 
@@ -20,13 +25,15 @@ import static org.hamcrest.Matchers.equalTo;
  * @date 03/02/2021
  *
  */
+@Epic("Regression Tests")
+@Feature("Handle Video Game APIs")
 public class TestUpdateVideoGame extends BaseTest {
 	
-	static Logger log = Logger.getLogger(TestUpdateVideoGame.class);
+	private static Logger log = LoggerFactory.getLogger(TestUpdateVideoGame.class);
 	
 	private VideoGame videoGame;
 	
-	@BeforeTest(alwaysRun= true, description = " generate a new video game object")
+	@BeforeTest(alwaysRun= true, description = "API test: generate a new video game object")
 	public void prepareDate() {
 		
 		videoGame = BaseTest.newVideoGame();
@@ -34,7 +41,9 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	//TODO: high lever modelization according to actual project 
-	@Test(description = "API: add a new video game", groups = {"positive"}, priority = 3)	
+	@Test(description = "API test: add a new video game", groups = {"positive"}, priority = 3)	
+	@Severity(SeverityLevel.BLOCKER)
+	@Description("Test description: POST, /videogames, add a new video game")
 	public void testAddVideoGames() throws JsonProcessingException {
 		
 		RestAssured.basePath = BaseTest.addNewVideoGame();
@@ -53,7 +62,9 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	
-	@Test(description = "API: update a video game by id", groups = {"positive"},  priority = 4)
+	@Test(description = "API test: update a video game", groups = {"positive"},  priority = 4)
+	@Severity(SeverityLevel.BLOCKER)
+	@Description("Test description: PUT, /videogames/videoGameId, update an existing video game by id ")
 	public void testPutVideoGame() throws JsonProcessingException {
 		
 		// update newly added video game as using a public mock server
@@ -78,7 +89,9 @@ public class TestUpdateVideoGame extends BaseTest {
 	}
 	
 	
-	@Test (description = "API: delete a video game by id", groups = {"positive"}, priority = 5)
+	@Test (description = "API test: delete a video game", groups = {"positive"}, priority = 5)
+	@Severity(SeverityLevel.BLOCKER)
+	@Description("Test description: DELETE, /videogames/videoGameId, delete an existing video game by id")
 	public void testDeleteVideoGame() {
 		
 		// delete newly added video game as using a public mock server

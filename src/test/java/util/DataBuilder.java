@@ -3,7 +3,9 @@ package util;
 import java.text.SimpleDateFormat;
 import java.sql.Timestamp;
 import java.util.Random;
-import org.testng.log4testng.Logger;
+
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 
 /**
@@ -15,7 +17,7 @@ import org.testng.log4testng.Logger;
  */
 public class DataBuilder {
 	
-	static Logger log = Logger.getLogger(DataBuilder.class);
+	private static Logger log = LoggerFactory.getLogger(DataBuilder.class);
 	
 	// create unique id for new video game
 	public static Integer getId(int currentMaxId) {

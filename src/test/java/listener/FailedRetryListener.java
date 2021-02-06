@@ -1,12 +1,10 @@
 package listener;
 
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 import org.testng.IAnnotationTransformer;
 import org.testng.IRetryAnalyzer;
 import org.testng.annotations.ITestAnnotation;
-import org.testng.log4testng.Logger;
-
-import testcases.BaseTest;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 
@@ -19,7 +17,7 @@ import java.lang.reflect.Method;
  */
 public class FailedRetryListener implements IAnnotationTransformer {
 	
-	static Logger log = Logger.getLogger(FailedRetryListener.class);
+	private static Logger log = LoggerFactory.getLogger(FailedRetryListener.class);
 	
     public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod) {
         {

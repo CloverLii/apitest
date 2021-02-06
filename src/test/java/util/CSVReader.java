@@ -2,7 +2,9 @@ package util;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import org.testng.log4testng.Logger;
+
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * Handle test cases which organized in testcases.csv file
@@ -12,7 +14,7 @@ import org.testng.log4testng.Logger;
  */
 public class CSVReader{
 	
-	static Logger log = Logger.getLogger(CSVReader.class);
+	private static Logger log = LoggerFactory.getLogger(CSVReader.class);
 	
 	public static void readCSV(String csvPath) throws FileNotFoundException {
 			
