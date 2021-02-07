@@ -28,8 +28,7 @@ pom.xml.next
 release.properties
 
 # folders
+output/
 allure-results/
-test-output/
 screenshots/
-report/
 logs/
